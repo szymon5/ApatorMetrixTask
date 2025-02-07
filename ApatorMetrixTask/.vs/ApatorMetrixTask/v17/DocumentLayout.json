@@ -1,0 +1,134 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\szymi\\Pulpit\\ApatorMetrixTask\\ApatorMetrixTask\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D554C49F-1B2A-4D9B-8C6C-7D43E26E9E93}|ApatorMetrixTask\\ApatorMetrixTask.csproj|c:\\users\\szymi\\pulpit\\apatormetrixtask\\apatormetrixtask\\apatormetrixtask\\viewmodel\\paymentcardmanagementsystemviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D554C49F-1B2A-4D9B-8C6C-7D43E26E9E93}|ApatorMetrixTask\\ApatorMetrixTask.csproj|solutionrelative:apatormetrixtask\\viewmodel\\paymentcardmanagementsystemviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D554C49F-1B2A-4D9B-8C6C-7D43E26E9E93}|ApatorMetrixTask\\ApatorMetrixTask.csproj|c:\\users\\szymi\\pulpit\\apatormetrixtask\\apatormetrixtask\\apatormetrixtask\\models\\paymentcard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D554C49F-1B2A-4D9B-8C6C-7D43E26E9E93}|ApatorMetrixTask\\ApatorMetrixTask.csproj|solutionrelative:apatormetrixtask\\models\\paymentcard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D554C49F-1B2A-4D9B-8C6C-7D43E26E9E93}|ApatorMetrixTask\\ApatorMetrixTask.csproj|c:\\users\\szymi\\pulpit\\apatormetrixtask\\apatormetrixtask\\apatormetrixtask\\implementation\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D554C49F-1B2A-4D9B-8C6C-7D43E26E9E93}|ApatorMetrixTask\\ApatorMetrixTask.csproj|solutionrelative:apatormetrixtask\\implementation\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2B9280A-E344-4FBC-8219-7D8C2FECFE19}|ApatorMetrixTask.Test\\ApatorMetrixTask.Test.csproj|c:\\users\\szymi\\pulpit\\apatormetrixtask\\apatormetrixtask\\apatormetrixtask.test\\paymentcardmanagementsystemviewmodel_test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2B9280A-E344-4FBC-8219-7D8C2FECFE19}|ApatorMetrixTask.Test\\ApatorMetrixTask.Test.csproj|solutionrelative:apatormetrixtask.test\\paymentcardmanagementsystemviewmodel_test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D554C49F-1B2A-4D9B-8C6C-7D43E26E9E93}|ApatorMetrixTask\\ApatorMetrixTask.csproj|c:\\users\\szymi\\pulpit\\apatormetrixtask\\apatormetrixtask\\apatormetrixtask\\models\\paymentcardowner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D554C49F-1B2A-4D9B-8C6C-7D43E26E9E93}|ApatorMetrixTask\\ApatorMetrixTask.csproj|solutionrelative:apatormetrixtask\\models\\paymentcardowner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D554C49F-1B2A-4D9B-8C6C-7D43E26E9E93}|ApatorMetrixTask\\ApatorMetrixTask.csproj|c:\\users\\szymi\\pulpit\\apatormetrixtask\\apatormetrixtask\\apatormetrixtask\\interfaces\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D554C49F-1B2A-4D9B-8C6C-7D43E26E9E93}|ApatorMetrixTask\\ApatorMetrixTask.csproj|solutionrelative:apatormetrixtask\\interfaces\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D554C49F-1B2A-4D9B-8C6C-7D43E26E9E93}|ApatorMetrixTask\\ApatorMetrixTask.csproj|c:\\users\\szymi\\pulpit\\apatormetrixtask\\apatormetrixtask\\apatormetrixtask\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D554C49F-1B2A-4D9B-8C6C-7D43E26E9E93}|ApatorMetrixTask\\ApatorMetrixTask.csproj|solutionrelative:apatormetrixtask\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 535,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PaymentCardManagementSystemViewModel_Test.cs",
+              "DocumentMoniker": "C:\\Users\\szymi\\Pulpit\\ApatorMetrixTask\\ApatorMetrixTask\\ApatorMetrixTask.Test\\PaymentCardManagementSystemViewModel_Test.cs",
+              "RelativeDocumentMoniker": "ApatorMetrixTask.Test\\PaymentCardManagementSystemViewModel_Test.cs",
+              "ToolTip": "C:\\Users\\szymi\\Pulpit\\ApatorMetrixTask\\ApatorMetrixTask\\ApatorMetrixTask.Test\\PaymentCardManagementSystemViewModel_Test.cs",
+              "RelativeToolTip": "ApatorMetrixTask.Test\\PaymentCardManagementSystemViewModel_Test.cs",
+              "ViewState": "AQIAAFcCAAAAAAAAAAAAACoCAABFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T18:11:19.131Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PaymentCardOwner.cs",
+              "DocumentMoniker": "C:\\Users\\szymi\\Pulpit\\ApatorMetrixTask\\ApatorMetrixTask\\ApatorMetrixTask\\Models\\PaymentCardOwner.cs",
+              "RelativeDocumentMoniker": "ApatorMetrixTask\\Models\\PaymentCardOwner.cs",
+              "ToolTip": "C:\\Users\\szymi\\Pulpit\\ApatorMetrixTask\\ApatorMetrixTask\\ApatorMetrixTask\\Models\\PaymentCardOwner.cs",
+              "RelativeToolTip": "ApatorMetrixTask\\Models\\PaymentCardOwner.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T13:07:20.62Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PaymentCard.cs",
+              "DocumentMoniker": "C:\\Users\\szymi\\Pulpit\\ApatorMetrixTask\\ApatorMetrixTask\\ApatorMetrixTask\\Models\\PaymentCard.cs",
+              "RelativeDocumentMoniker": "ApatorMetrixTask\\Models\\PaymentCard.cs",
+              "ToolTip": "C:\\Users\\szymi\\Pulpit\\ApatorMetrixTask\\ApatorMetrixTask\\ApatorMetrixTask\\Models\\PaymentCard.cs",
+              "RelativeToolTip": "ApatorMetrixTask\\Models\\PaymentCard.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAAAAAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T13:03:28.196Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "C:\\Users\\szymi\\Pulpit\\ApatorMetrixTask\\ApatorMetrixTask\\ApatorMetrixTask\\Interfaces\\IRepository.cs",
+              "RelativeDocumentMoniker": "ApatorMetrixTask\\Interfaces\\IRepository.cs",
+              "ToolTip": "C:\\Users\\szymi\\Pulpit\\ApatorMetrixTask\\ApatorMetrixTask\\ApatorMetrixTask\\Interfaces\\IRepository.cs",
+              "RelativeToolTip": "ApatorMetrixTask\\Interfaces\\IRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-04T19:59:43.354Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "C:\\Users\\szymi\\Pulpit\\ApatorMetrixTask\\ApatorMetrixTask\\ApatorMetrixTask\\Implementation\\Repository.cs",
+              "RelativeDocumentMoniker": "ApatorMetrixTask\\Implementation\\Repository.cs",
+              "ToolTip": "C:\\Users\\szymi\\Pulpit\\ApatorMetrixTask\\ApatorMetrixTask\\ApatorMetrixTask\\Implementation\\Repository.cs",
+              "RelativeToolTip": "ApatorMetrixTask\\Implementation\\Repository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-04T19:51:11.107Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\szymi\\Pulpit\\ApatorMetrixTask\\ApatorMetrixTask\\ApatorMetrixTask\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "ApatorMetrixTask\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\szymi\\Pulpit\\ApatorMetrixTask\\ApatorMetrixTask\\ApatorMetrixTask\\MainWindow.xaml",
+              "RelativeToolTip": "ApatorMetrixTask\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-02-06T12:46:05.549Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PaymentCardManagementSystemViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\szymi\\Pulpit\\ApatorMetrixTask\\ApatorMetrixTask\\ApatorMetrixTask\\ViewModel\\PaymentCardManagementSystemViewModel.cs",
+              "RelativeDocumentMoniker": "ApatorMetrixTask\\ViewModel\\PaymentCardManagementSystemViewModel.cs",
+              "ToolTip": "C:\\Users\\szymi\\Pulpit\\ApatorMetrixTask\\ApatorMetrixTask\\ApatorMetrixTask\\ViewModel\\PaymentCardManagementSystemViewModel.cs",
+              "RelativeToolTip": "ApatorMetrixTask\\ViewModel\\PaymentCardManagementSystemViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAABOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-04T19:26:27.131Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

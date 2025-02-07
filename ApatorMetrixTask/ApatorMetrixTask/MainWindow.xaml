@@ -1,0 +1,316 @@
+﻿<Window x:Class="ApatorMetrixTask.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" ResizeMode="NoResize" Name="PCMS"
+        Title="Payment Card Management System" Height="750" Width="1300">
+
+    <Grid>
+        <TabControl SelectedIndex="{Binding SelectedTabControlIndex, Mode=TwoWay}" TabStripPlacement="Bottom" SelectionChanged="TabControl_SelectionChanged">
+            <TabItem Header="Add card">
+                <Grid Background="#FFFFFF">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="3*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="5*"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0" Grid.Column="0">
+                            <!-- Definiowanie kolumn i wierszy -->
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="7*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="0.05*"/>
+                                <RowDefinition Height="0.05*"/>
+                                <RowDefinition Height="0.05*"/>
+                            </Grid.RowDefinitions>
+
+                            <!-- Elementy w siatce -->
+                            <Label Grid.Row="0" Grid.Column="0" Content="Owner Account Number:" FontSize="20" />
+                            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding OwnerAccountNumber, UpdateSourceTrigger=PropertyChanged}" MaxLength="34" TextWrapping="Wrap" FontSize="20" />
+                            <Label Grid.Row="1" Grid.Column="0" Content="Pin:" FontSize="20"/>
+                            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Pin, UpdateSourceTrigger=PropertyChanged}" MaxLength="4" TextWrapping="Wrap" FontSize="20"/>
+                            <Label Grid.Row="2" Grid.Column="0" Content="Card Serial Number:" FontSize="20"/>
+                            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding CardSerialNumber, UpdateSourceTrigger=PropertyChanged}" MaxLength="32" TextWrapping="Wrap" FontSize="20"/>
+                        </Grid>
+
+                        <Button Grid.Row="1" Command="{Binding AddNewPaymentCardCommand}" Content="Add new card" FontSize="20" HorizontalAlignment="Left" Margin="45,0,0,0" VerticalAlignment="Top"/>
+
+
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Find card">
+                <Grid Background="#FFFFFF">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="3*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="6*"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0" Grid.Column="0">
+                            <!-- Definiowanie kolumn i wierszy -->
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="7*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="0.05*"/>
+                                <RowDefinition Height="0.05*"/>
+                                <RowDefinition Height="0.05*"/>
+                            </Grid.RowDefinitions>
+
+                            <!-- Elementy w siatce -->
+                            <Label Grid.Row="0" Grid.Column="0" Content="Owner Account Number:" FontSize="20" />
+                            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding OwnerAccountNumber, UpdateSourceTrigger=PropertyChanged}" MaxLength="34" TextWrapping="Wrap" FontSize="20" />
+                            <Label Grid.Row="1" Grid.Column="0" Content="Card Serial Number:" FontSize="20"/>
+                            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding CardSerialNumber, UpdateSourceTrigger=PropertyChanged}" MaxLength="32" TextWrapping="Wrap" FontSize="20"/>
+                            <Label Grid.Row="2" Grid.Column="0" Content="Unique card identyfier:" FontSize="20"/>
+                            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding UCID, UpdateSourceTrigger=PropertyChanged}" MaxLength="34" TextWrapping="Wrap" FontSize="20"/>
+                        </Grid>
+
+                        <Button Grid.Row="1" Grid.Column="0" Command="{Binding FindPaymentCardCommand}" Content="Find card" FontSize="20" HorizontalAlignment="Left" Margin="45,0,0,0" VerticalAlignment="Center"/>
+                        <Button Grid.Row="1" Grid.Column="0" Command="{Binding GetAllPaymentCardsCommand}" Content="Get all payment cards" FontSize="20" HorizontalAlignment="Left" Margin="274,0,0,0" VerticalAlignment="Center"/>
+
+                        <ListView Grid.Row="2" Grid.Column="1" Visibility="{Binding PaymentCardFound}" ItemsSource="{Binding PaymentCards}" SelectionMode="Single">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="PaymentCardID" DisplayMemberBinding="{Binding PaymentCardID}" Width="120" />
+                                    <GridViewColumn Header="OwnerAccountNumber" DisplayMemberBinding="{Binding OwnerAccountNumber}" Width="150"/>
+                                    <GridViewColumn Header="Pin" DisplayMemberBinding="{Binding Pin}" Width="60"/>
+                                    <GridViewColumn Header="CardSerialNumber" DisplayMemberBinding="{Binding CardSerialNumber}" Width="120"/>
+                                    <GridViewColumn Header="UCID" DisplayMemberBinding="{Binding UCID}" Width="180"/>
+                                    <GridViewColumn Header="Card number" DisplayMemberBinding="{Binding CardNumber}" Width="120"/>
+                                    <GridViewColumn Header="Expiry month" DisplayMemberBinding="{Binding ExpiryDateMonth}" Width="120"/>
+                                    <GridViewColumn Header="Expiry year" DisplayMemberBinding="{Binding ExpiryDateYear}" Width="120"/>
+                                    <GridViewColumn Header="CVV" DisplayMemberBinding="{Binding CVV}" Width="120"/>
+                                    <GridViewColumn Header="Remove" Width="50">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Button Command="{Binding DataContext.RemovePaymentCardFromListCommand, RelativeSource={RelativeSource AncestorType=Window}}" 
+                      CommandParameter="{Binding}">
+                                                    <Button.Content>
+                                                        <Image Source="https://banner2.cleanpng.com/20180602/etj/kisspng-rubbish-bins-waste-paper-baskets-recycling-bin-c-icon-tempat-5b129991e0dbd8.115005781527945617921.jpg" Width="30" Height="30"/>
+                                                    </Button.Content>
+                                                </Button>
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                    <GridViewColumn Header="Use in preview" Width="100">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                    <CheckBox IsChecked="{Binding IsSelected, Mode=TwoWay}" 
+                          Command="{Binding DataContext.SelectPaymentCardFromListCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                          CommandParameter="{Binding}" 
+                          HorizontalAlignment="Center" 
+                          VerticalAlignment="Center"/>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+
+                        <Label Grid.Row="2" Grid.Column="1" Visibility="{Binding NoPaymentCardFoundInfo}" Content="No payment card found" FontSize="20" />
+
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Remove card">
+                <Grid Background="#FFFFFF">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="3*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="5*"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0" Grid.Column="0">
+                            <!-- Definiowanie kolumn i wierszy -->
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="7*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="0.05*"/>
+                                <RowDefinition Height="0.05*"/>
+                                <RowDefinition Height="0.05*"/>
+                            </Grid.RowDefinitions>
+
+                            <!-- Elementy w siatce -->
+                            <Label Grid.Row="0" Grid.Column="0" Content="Owner Account Number:" FontSize="20" />
+                            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding OwnerAccountNumber, UpdateSourceTrigger=PropertyChanged}" MaxLength="34" TextWrapping="Wrap" FontSize="20" />
+                            <Label Grid.Row="1" Grid.Column="0" Content="Card Serial Number:" FontSize="20"/>
+                            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding CardSerialNumber, UpdateSourceTrigger=PropertyChanged}" MaxLength="32" TextWrapping="Wrap" FontSize="20"/>
+                            <Label Grid.Row="2" Grid.Column="0" Content="Unique card identyfier:" FontSize="20"/>
+                            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding UCID, UpdateSourceTrigger=PropertyChanged}" MaxLength="34" TextWrapping="Wrap" FontSize="20"/>
+                        </Grid>
+
+                        <Button Grid.Row="1" Command="{Binding RemovePaymentCardCommand}" Content="Remove card" FontSize="20" HorizontalAlignment="Left" Margin="45,0,0,0" VerticalAlignment="Top"/>
+
+
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Produce card" Height="20" VerticalAlignment="Top">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.1*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="0.1*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="0.1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="5" 
+           Text="Preview of the VISA and MasterCard. If you edit data on one card, the second card will also be edited. In one moment you can produce only one card." 
+           FontSize="20" 
+           TextAlignment="Center"
+           TextWrapping="Wrap"
+           HorizontalAlignment="Center" 
+           VerticalAlignment="Center"/>
+
+
+                    <Label Grid.Row="1" Grid.Column="1" Content="VISA - Front" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                    <Label Grid.Row="1" Grid.Column="3" Content="MasterCard - Front" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                    <Grid Grid.Row="2" Grid.Column="1" Width="400" Height="250">
+                        <!-- Zaokrąglone tło karty -->
+                        <Border Width="400" Height="250" Background="DarkBlue" CornerRadius="20"/>
+
+                        <!-- Logo VISA -->
+                        <TextBox Text="{Binding BankName, UpdateSourceTrigger=PropertyChanged}" FontSize="20" FontWeight="Bold" Background="Transparent" HorizontalAlignment="Left" Margin="18,20,0,189"
+                                 Foreground="White"/>
+
+                        <!-- Logo VISA -->
+                        <TextBlock Text="VISA" FontSize="36" FontWeight="Bold" Foreground="White" HorizontalAlignment="Right" Margin="0,20,20,189"/>
+
+                        <!-- Numer karty -->
+                        <TextBox Text="{Binding CardNumber, UpdateSourceTrigger=PropertyChanged}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="300" Height="40" FontSize="25"
+Foreground="White" Background="Transparent" BorderBrush="White"
+HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                        <!-- Imię i nazwisko właściciela -->
+                        <TextBox Text="{Binding CardHolder, UpdateSourceTrigger=PropertyChanged}" Width="158" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+Height="30" FontSize="16"
+Foreground="White" Background="Transparent" BorderBrush="White" 
+Margin="50,190,0,30" HorizontalAlignment="Left"/>
+
+                        <!-- Data ważności -->
+                        <TextBox Text="{Binding ExpiryDateMonth, UpdateSourceTrigger=PropertyChanged}" Width="40" Height="30" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+Foreground="White" Background="Transparent" BorderBrush="White" MaxLength="2"
+Margin="0,190,109,30" HorizontalAlignment="Right"/>
+
+                        <Line X1="10" Y1="27" X2="20" Y2="0" Stroke="White" StrokeThickness="3" Margin="285,192,90,33"/>
+
+                        <TextBox Text="{Binding ExpiryDateYear, UpdateSourceTrigger=PropertyChanged}" Width="40" Height="30" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+Foreground="White" Background="Transparent" BorderBrush="White" MaxLength="2"
+Margin="0,190,50,30" HorizontalAlignment="Right"/>
+                    </Grid>
+
+                    <Grid Grid.Row="2" Grid.Column="3" Width="400" Height="250" Margin="0,10,0,0">
+                        <!-- Zaokrąglone tło karty -->
+                        <!-- Zaokrąglone tło karty -->
+                        <Border Width="400" Height="250" Background="DarkOrange" CornerRadius="20"/>
+
+                        <!-- Logo VISA -->
+                        <TextBox Text="{Binding BankName, UpdateSourceTrigger=PropertyChanged}" Background="Transparent" FontSize="20" FontWeight="Bold" Foreground="White"
+  HorizontalAlignment="Left" Margin="18,20,0,189"/>
+
+                        <!-- Logo VISA -->
+                        <TextBlock Text="MasterCard" FontSize="36" FontWeight="Bold" Foreground="White"
+  HorizontalAlignment="Right" Margin="0,20,20,189"/>
+
+                        <!-- Numer karty -->
+                        <TextBox Text="{Binding CardNumber, UpdateSourceTrigger=PropertyChanged}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="300" Height="40" FontSize="25"
+Foreground="White" Background="Transparent" BorderBrush="White"
+HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                        <!-- Imię i nazwisko właściciela -->
+                        <TextBox Text="{Binding CardHolder, UpdateSourceTrigger=PropertyChanged}" Width="158" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+Height="30" FontSize="16"
+Foreground="White" Background="Transparent" BorderBrush="White" 
+Margin="50,190,0,30" HorizontalAlignment="Left"/>
+
+                        <!-- Data ważności -->
+                        <TextBox Text="{Binding ExpiryDateMonth, UpdateSourceTrigger=PropertyChanged}" Width="40" Height="30" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+Foreground="White" Background="Transparent" BorderBrush="White" MaxLength="2"
+Margin="0,190,109,30" HorizontalAlignment="Right"/>
+
+                        <Line X1="10" Y1="27" X2="20" Y2="0" Stroke="White" StrokeThickness="3" Margin="285,192,90,33"/>
+
+                        <TextBox Text="{Binding ExpiryDateYear, UpdateSourceTrigger=PropertyChanged}" Width="40" Height="30" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+Foreground="White" Background="Transparent" BorderBrush="White" MaxLength="2"
+Margin="0,190,50,30" HorizontalAlignment="Right"/>
+                    </Grid>
+
+                    <Label Grid.Row="3" Grid.Column="1" Content="VISA - Back" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Label Grid.Row="3" Grid.Column="3" Content="MasterCard - Back" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                    <Grid Grid.Row="4" Grid.Column="1" Width="400" Height="250">
+                        <Border Width="400" Height="250" Background="DarkBlue" CornerRadius="20"/>
+
+                        <!-- Numer karty -->
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox Text=" Card holder signature" Width="194" Height="60" FontSize="18"
+Foreground="White" Background="Transparent" BorderBrush="White" VerticalAlignment="Center"
+                            VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                            <TextBox Text="{Binding CVV, UpdateSourceTrigger=PropertyChanged}" Width="56" Height="40" FontSize="18" MaxLength="3"
+                            VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+Foreground="White" Background="Transparent" BorderBrush="White"/>
+                        </StackPanel>
+                    </Grid>
+
+                    <Grid Grid.Row="4" Grid.Column="3" Width="400" Height="250" Margin="0,10,0,0">
+                        <!-- Zaokrąglone tło karty -->
+                        <Border Width="400" Height="250" Background="DarkOrange" CornerRadius="20"/>
+
+                        <!-- Numer karty -->
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox Text=" Card holder signature" Width="194" Height="60" FontSize="18"
+Foreground="White" Background="Transparent" BorderBrush="White" VerticalAlignment="Center"
+                            VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                            <TextBox Text="{Binding CVV, UpdateSourceTrigger=PropertyChanged}" Width="56" Height="40" FontSize="18" MaxLength="3"
+                            VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+Foreground="White" Background="Transparent" BorderBrush="White"/>
+                        </StackPanel>
+                    </Grid>
+
+                    <Button Grid.Row="5" Grid.Column="1" Content="Produce VISA card" HorizontalAlignment="Center" FontSize="20" Width="298" Height="40" Command="{Binding ProducePaymentCardCommand}" CommandParameter="True"/>
+                    <Button Grid.Row="5" Grid.Column="3" Content="Produce MasterCard card" HorizontalAlignment="Center" FontSize="20" Width="298" Height="40" Command="{Binding ProducePaymentCardCommand}" CommandParameter="False"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>
